@@ -77,8 +77,9 @@ def create_fleet(ai_settings, screen, ship, aliens):
     number_aliens_x = int(available_space_x / (2* alien_width))
     number_rows = get_number_rows(ai_settings, ship.rect.height ,alien.rect.height)
     # Create the first row of aliens.
-    for alien_number in range(number_aliens_x):
-        create_alien(ai_settings, screen, aliens, alien_number,row_number)
+    for row_number in range(number_rows):
+        for alien_number in range(number_aliens_x):
+            create_alien(ai_settings, screen, aliens, alien_number,row_number)
 
 def create_alien(ai_settings, screen, aliens, alien_number,row_number):
     # Create an alien and place it in the row.
